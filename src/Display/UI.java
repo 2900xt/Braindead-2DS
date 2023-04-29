@@ -101,10 +101,10 @@ public class UI {
 
         if(team)
         {
-            g.drawImage(new ImageIcon("./Assets/textures/T_logo.png").getImage(), (img.getWidth() / 2) - iconWidth / 2, (img.getHeight() / 2) - iconHeight / 2, iconWidth, iconHeight, null);
+            g.drawImage(new ImageIcon("./res/images/textures/T_logo.png").getImage(), (img.getWidth() / 2) - iconWidth / 2, (img.getHeight() / 2) - iconHeight / 2, iconWidth, iconHeight, null);
         } else 
         {
-            g.drawImage(new ImageIcon("./Assets/textures/CT_logo.png").getImage(), (img.getWidth() / 2) - iconWidth / 2, (img.getHeight() / 2) - iconHeight / 2, iconWidth, iconHeight, null);
+            g.drawImage(new ImageIcon("./res/images/textures/CT_logo.png").getImage(), (img.getWidth() / 2) - iconWidth / 2, (img.getHeight() / 2) - iconHeight / 2, iconWidth, iconHeight, null);
         }
 
         if(p.getKills() >= 5)
@@ -181,10 +181,10 @@ public class UI {
         g.fillRect(SG_BOX_X, SG_BOX_Y, BOX_WIDTH, BOX_HEIGHT);
         g.fillRect(AR_BOX_X, AR_BOX_Y, BOX_WIDTH, BOX_HEIGHT);
 
-        g.drawImage(new ImageIcon("./Assets/textures/weapons/Assault Rifle.png").getImage() , AR_BOX_X, AR_BOX_Y, BOX_WIDTH, BOX_HEIGHT, null);
-        g.drawImage(new ImageIcon("./Assets/textures/weapons/Shotgun.png").getImage()       , SG_BOX_X, SG_BOX_Y, BOX_WIDTH, BOX_HEIGHT, null);
-        g.drawImage(new ImageIcon("./Assets/textures/weapons/SMG.png").getImage()           , SM_BOX_X, SM_BOX_Y, BOX_WIDTH, BOX_HEIGHT, null);
-        g.drawImage(new ImageIcon("./Assets/textures/weapons/Revolver.png").getImage()      , R_BOX_X,  R_BOX_Y,  BOX_WIDTH, BOX_HEIGHT, null);
+        g.drawImage(new ImageIcon("./res/images/weapons/Assault Rifle.png").getImage() , AR_BOX_X, AR_BOX_Y, BOX_WIDTH, BOX_HEIGHT, null);
+        g.drawImage(new ImageIcon("./res/images/weapons/Shotgun.png").getImage()       , SG_BOX_X, SG_BOX_Y, BOX_WIDTH, BOX_HEIGHT, null);
+        g.drawImage(new ImageIcon("./res/images/weapons/SMG.png").getImage()           , SM_BOX_X, SM_BOX_Y, BOX_WIDTH, BOX_HEIGHT, null);
+        g.drawImage(new ImageIcon("./res/images/weapons/Revolver.png").getImage()      , R_BOX_X,  R_BOX_Y,  BOX_WIDTH, BOX_HEIGHT, null);
 
         int STATS_X = BOX_GAP;
         int STATS_Y = SM_BOX_Y + BOX_HEIGHT + BOX_GAP * 2;
@@ -246,7 +246,7 @@ public class UI {
 
     public static void drawKillScreen(Player p, Graphics g, BufferedImage img)
     {
-        g.drawImage(new ImageIcon("./Assets/images/kill" + Math.min(p.getKills(), 5) + ".png").getImage(), (img.getWidth() - 150) / 2, (img.getHeight() - 250), 150, 150, null);
+        g.drawImage(new ImageIcon("./res/images/kills/" + Math.min(p.getKills(), 5) + ".png").getImage(), (img.getWidth() - 150) / 2, (img.getHeight() - 250), 150, 150, null);
     }
 
 }

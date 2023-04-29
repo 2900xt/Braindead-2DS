@@ -100,7 +100,7 @@ public class HUD {
 
         if(player.primary != null)
         {
-            g.drawImage(new ImageIcon("./Assets/textures/weapons/" + player.primary.getName() + ".png").getImage(), xSize - 200, ySize - 200, 200, 50, null);
+            g.drawImage(new ImageIcon("./res/images/weapons/" + player.primary.getName() + ".png").getImage(), xSize - 200, ySize - 200, 200, 50, null);
             if(player.getWeapon() == player.primary)
             {
                 g.setColor(new Color(0, 0, 0, 70));
@@ -111,7 +111,7 @@ public class HUD {
         }
         if(player.secondary != null)
         {
-            g.drawImage(new ImageIcon("./Assets/textures/weapons/" + player.secondary.getName() + ".png").getImage(), xSize - 200, ySize - 125, 200, 50, null);
+            g.drawImage(new ImageIcon("./res/images/weapons/" + player.secondary.getName() + ".png").getImage(), xSize - 200, ySize - 125, 200, 50, null);
             if(player.getWeapon() == player.secondary)
             {
                 g.setColor(new Color(0, 0, 0, 70));
@@ -122,7 +122,7 @@ public class HUD {
         }
         if(player.bomb != null)
         {
-            g.drawImage(new ImageIcon("./Assets/textures/bomb.jpg").getImage(), xSize - 75, ySize - 75, 50, 50, null);
+            g.drawImage(new ImageIcon("./res/images/textures/bomb.jpg").getImage(), xSize - 75, ySize - 75, 50, 50, null);
             if(player.bomb.plantingBomb)
             {
                 g.setColor(new Color(0, 0, 0, 70));

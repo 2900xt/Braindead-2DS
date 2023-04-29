@@ -1,4 +1,4 @@
-package src;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -26,7 +26,7 @@ import src.World.Entity.Bot;
 public class Launcher {
     public static void main(String[] args) {
 
-        File mapDir = new File("./Assets/maps");
+        File mapDir = new File("./res/maps");
 
         JFrame launcher = new JFrame("Braindead-2DS Launcher");
         launcher.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

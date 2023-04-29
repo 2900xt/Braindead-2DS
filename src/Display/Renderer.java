@@ -38,7 +38,7 @@ public class Renderer {
         textures = new ArrayList<>();
         for(int i = 0 ; i < 11; i++)
         {
-            textures.add(new ImageIcon("./Assets/textures/" + i + ".png"));
+            textures.add(new ImageIcon("./res/images/textures/" + i + ".png"));
         }
 
         //Load the segments
@@ -57,7 +57,7 @@ public class Renderer {
             }
         }
 
-        wallpaper = new ImageIcon("./Assets/wallpaper.jpg");
+        wallpaper = new ImageIcon("./res/images/wallpaper.jpg");
     }
 
 
@@ -120,10 +120,10 @@ public class Renderer {
         ImageIcon i;
         if(entity.getTeam()){
             g.setColor(Color.ORANGE);
-            i = new ImageIcon("./Assets/textures/t.png");
+            i = new ImageIcon("./res/images/textures/t.png");
         } else {
             g.setColor(Color.BLUE);
-            i = new ImageIcon("./Assets/textures/ct.png");
+            i = new ImageIcon("./res/images/textures/ct.png");
         }
         g.drawImage(i.getImage(), (int)offsetPos.getX(), (int)offsetPos.getY() , segmentSizePx, segmentSizePx, null);
     }
@@ -226,7 +226,7 @@ public class Renderer {
         Vec2 offsetPos = normalizeCoords(bombPos).subtract(camera);
         offsetPos.setY(offsetPos.getY() - segmentSizePx / 3);
         offsetPos.setX(offsetPos.getX() - segmentSizePx / 3);
-        g.drawImage(new ImageIcon("./Assets/textures/bomb.jpg").getImage(), (int)offsetPos.getX(), (int)offsetPos.getY(), (int)(segmentSizePx / 1.5), (int)(segmentSizePx  / 1.5), null);
+        g.drawImage(new ImageIcon("./res/textures/bomb.jpg").getImage(), (int)offsetPos.getX(), (int)offsetPos.getY(), (int)(segmentSizePx / 1.5), (int)(segmentSizePx  / 1.5), null);
     }
 
     public void drawBullets(Graphics g, Vec2 camera)
@@ -243,7 +243,7 @@ public class Renderer {
     {
         cursorEnabled = true;
         panel.addMouseMotionListener(mouseInput);
-        panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("./Assets/Null_Cursor.png").getImage(), new Point(0, 0), ""));
+        panel.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("./res/Null_Cursor.png").getImage(), new Point(0, 0), ""));
     }
 
     public void disableAim()

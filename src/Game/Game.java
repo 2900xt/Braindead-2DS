@@ -47,7 +47,7 @@ public class Game extends JPanel
         g.fillRect(0, 0, WIDTH, HEIGHT);
         g.setFont(new Font("DynaPuff", Font.BOLD, 50));
         g.setColor(Color.BLACK);
-        g.drawString("Loading Assets...", 250, 500);
+        g.drawString("Loading res...", 250, 500);
 
         Player p1 = new Player(world.TSpawn, team);
 

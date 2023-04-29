@@ -17,7 +17,7 @@ public class Sound {
     {
         if(!soundEnable) return null;
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("./Assets/audio/" + filename));
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("./res/audio/" + filename));
             final Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();

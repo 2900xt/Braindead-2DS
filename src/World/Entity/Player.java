@@ -144,7 +144,6 @@ public class Player extends Playable{
 
     public void onTick()
     {
-
         //Check if the 'keysPressed' set contains a key, and then perform the corresponding event.
         Vec2 acceleration = new Vec2();
 

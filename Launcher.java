@@ -20,6 +20,7 @@ import src.Display.Minimap;
 import src.Display.Renderer;
 import src.Game.Game;
 import src.Game.Sound;
+import src.Math.Vec2;
 import src.World.World;
 import src.World.Entity.Bot;
 

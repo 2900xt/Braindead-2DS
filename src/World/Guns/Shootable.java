@@ -128,10 +128,11 @@ public abstract class Shootable {
         @Override
         public void run() {
             try {
-                for(double i = 0; i < reloadTime * 100; i++)
+                while(currentReloadTime < reloadTime)
                 {
+                    long init = System.currentTimeMillis();
                     Thread.sleep(10);
-                    currentReloadTime += 0.01;
+                    currentReloadTime += (System.currentTimeMillis() - init)/1000.0;
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

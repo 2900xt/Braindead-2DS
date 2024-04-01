@@ -43,7 +43,7 @@ public class Bomb {
     }
 
     public boolean plantingBomb = false;
-    public double timeToPlant = 3.0;
+    public double timeToPlant = 2.5;
     private World world;
     private Bomb bomb;
 
@@ -57,6 +57,7 @@ public class Bomb {
             while(true)
             {
                 try {
+                    long init = System.currentTimeMillis();
                     Thread.sleep(10);
                     if(!originalPos.equals(holder.getPos()) || holder.isDead())
                     {
@@ -80,7 +81,7 @@ public class Bomb {
                         }
                     }
 
-                    timeToPlant -= 0.01;
+                    timeToPlant -= (System.currentTimeMillis() - init)/1000.0;
                     if(timeToPlant <= 0)
                     {
                         plantingBomb = false;
@@ -110,15 +111,16 @@ public class Bomb {
         @Override
         public void run() {
             timeTillExplosion = 40.0;
-            while(true){
-            try {Thread.sleep(10);} catch (Throwable t) {}
-            timeTillExplosion -= 0.01;
-            if(!planted) return;
-            if(timeTillExplosion <= 0)
-            {
-                blownUp = true;
+            while(true) {
+                long init = System.currentTimeMillis();
+                try {Thread.sleep(10);} catch (Throwable t) {}
+                timeTillExplosion -= (System.currentTimeMillis() - init)/1000.0;
+                if(!planted) return;
+                if(timeTillExplosion <= 0)
+                {
+                    blownUp = true;
+                }
             }
-        }
         }
     }
     public Clip bombTickSound;
@@ -154,6 +156,8 @@ public class Bomb {
             for(int i = 0; i < 5000; i++)
             {
                 try {
+                    
+                    long init = System.currentTimeMillis();
                     Thread.sleep(10);
                     if(!originalPos.equals(defuser.getPos()) || defuser.isDead())
                     {
@@ -178,7 +182,7 @@ public class Bomb {
                         }
                     }
 
-                    timeToDefuse -= 0.01;
+                    timeToDefuse -= (System.currentTimeMillis() - init)/1000.0;
                     if(timeToDefuse <= 0)
                     {
                         defusingBomb = false;

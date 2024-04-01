@@ -52,7 +52,7 @@ public class HUD {
         //Draw a progress bar if the player is planting or defusing the bomb
         if(player.bomb != null && player.bomb.plantingBomb)
         {
-            double progress = (2.5 - player.bomb.timeToPlant) / 2.5 ;
+            double progress = (2.5 - player.bomb.timeToPlant) / 2.5;
             drawProgressBar(g, progress, (xSize - 300) / 2, 200, 300, 20);
 
 

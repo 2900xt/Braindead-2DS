@@ -1,5 +1,6 @@
 package src.Math;
-public class Vec2 {
+public class Vec2 implements Comparable<Vec2>
+{
     private double[] data;
 
     //Constructor - sets the vector to 0
@@ -115,8 +116,19 @@ public class Vec2 {
         return Math.sqrt(Math.pow(getX(), 2) + Math.pow(getY(), 2));
     }
 
+    public boolean equals(Vec2 other, double eps)
+    {
+        return Math.abs(getX() - other.getX()) + Math.abs(getY() - other.getY()) < eps;
+    }
+
     public boolean equals(Vec2 other)
     {
-        return ((int)getX() == (int)other.getX() && (int)getY() == (int)other.getY());
+        return equals(other, 0.5);
+    }
+
+    @Override
+    public int compareTo(Vec2 o) 
+    {
+        return (int) (o.getX() - getX() + o.getY() - getY());
     }
 }

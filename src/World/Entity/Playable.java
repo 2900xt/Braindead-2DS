@@ -98,7 +98,6 @@ public abstract class Playable {
 
     public boolean checkForWalls(Vec2 velocity)
     {
-
         //Check if the next 'segment' that the player is attempting to walk into is a wall
 
         Vec2 displacement = new Vec2(velocity);

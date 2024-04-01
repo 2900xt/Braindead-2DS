@@ -60,6 +60,23 @@ public class Renderer {
         wallpaper = new ImageIcon("./res/images/wallpaper.jpg");
     }
 
+    public void normalizeSegments()
+    {
+        segments = new ArrayList<>();
+        int segmentCount = (int)Math.sqrt(world.getSize());
+        for(int y = 0; y < segmentCount; y++)
+        {
+            for(int x = 0; x < segmentCount; x++)
+            {
+                Segment worldSegment = world.getSegment(x, y);
+                Segment normalized = new Segment();
+                normalized.isWall = worldSegment.isWall;
+                normalized.position = normalizeCoords(worldSegment.position);
+                normalized.texture = worldSegment.texture;
+                segments.add(normalized);
+            }
+        }
+    }
 
 
     public void renderWorld(Graphics g)

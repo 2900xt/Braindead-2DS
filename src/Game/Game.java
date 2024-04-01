@@ -26,7 +26,7 @@ public class Game extends JPanel
     private World world;
     private Minimap minimap;
     private HUD hud;
-    private Renderer renderer;
+    public static Renderer renderer;
     private JPanel panel;
 
     public static int CTCount, TCount;

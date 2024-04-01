@@ -2,12 +2,15 @@ package src.World.Entity;
 
 import src.Math.Vec2;
 import src.World.World;
+import src.World.Entity.Pathfinding.BFSPathfinder;
+import src.World.Entity.Pathfinding.Pathfinder;
 import src.World.Guns.*;
 
 public class Bot extends Playable {
 
     private Playable lockedOnEnemy;
     public boolean isDefusing;
+    public Pathfinder pf;
     private Vec2 siteToPathfind;
 
     public static double recoil;
@@ -26,46 +29,8 @@ public class Bot extends Playable {
         {
             siteToPathfind = world.BSite;
         }
-    }
 
-    public void pathFind(Vec2 destination)
-    {
-        if(pos.equals(destination)) return;
-
-        //Try to walk all paths, from most to least optimal towards the destination
-        Vec2 displacement = pos.subtract(destination);
-
-        //Best angle should be arctan(y/x)
-        double bestAngle = Math.atan(displacement.getY() / displacement.getX());
-
-        if(displacement.getX() > 0)
-        {
-            bestAngle += Math.PI;
-        }
-
-        for(int i = 0; i < 18; i++)
-        {
-            double currentAngle1 = bestAngle - i * 20;
-            Vec2 currentDistance1 = Vec2.fromPolar(speed, currentAngle1);
-            double currentDistance1Magn = currentDistance1.subtract(displacement).getMagnitude();
-
-            double currentAngle2 = bestAngle + i * 20;
-            Vec2 currentDistance2 = Vec2.fromPolar(speed, currentAngle2);
-            double currentDistance2Magn = currentDistance2.subtract(displacement).getMagnitude();
-
-            if(!checkForWalls(currentDistance1) && currentDistance1Magn < currentDistance2Magn) {
-                setAngle(currentAngle1);
-                move(currentDistance1);
-                return;
-            }
-            
-            if(!checkForWalls(currentDistance2)) {
-                setAngle(currentAngle2);
-                move(currentDistance2);
-                return;
-            }
-        }
-        
+        pf = new BFSPathfinder(this);
     }
 
     public void doCT()
@@ -83,14 +48,14 @@ public class Bot extends Playable {
                     free = true;
                 }
             } else {
-                pathFind(world.getBomb().location);
+                pf.pathFind(world.getBomb().location);
             }
         } else {
             free = true;
         }
         if (lockedOnEnemy != null && free)
         {
-            pathFind(lockedOnEnemy.pos.add(new Vec2(Math.random(), Math.random())));
+            pf.pathFind(lockedOnEnemy.pos);
 
             if(!currentWeapon.isReloading() && !currentWeapon.isShooting())
             {
@@ -100,7 +65,7 @@ public class Bot extends Playable {
 
         if(lockedOnEnemy == null && free)
         {
-            pathFind(siteToPathfind);
+            pf.pathFind(siteToPathfind);
         }
     }
 
@@ -110,7 +75,7 @@ public class Bot extends Playable {
         {
             if(!world.BSite.equals(pos))
             {
-                pathFind(world.BSite);
+                pf.pathFind(world.BSite);
             } else 
             {
                 bomb.plantBomb(world);
@@ -119,7 +84,7 @@ public class Bot extends Playable {
 
         if (lockedOnEnemy != null)
         {
-            pathFind(lockedOnEnemy.pos);
+            pf.pathFind(lockedOnEnemy.pos);
 
             if(!currentWeapon.isReloading() && !currentWeapon.isShooting())
             {
@@ -129,14 +94,14 @@ public class Bot extends Playable {
 
         if(lockedOnEnemy == null && world.getBomb() == null)
         {
-            pathFind(siteToPathfind);
+            pf.pathFind(siteToPathfind);
         }
 
         if(world.getBomb() == null) return;
 
         if(world.getBomb().planted)
         {
-            pathFind(world.getBomb().location);
+            pf.pathFind(world.getBomb().location);
         }
 
     }

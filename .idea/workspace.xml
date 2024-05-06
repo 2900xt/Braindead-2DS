@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3729978-e99b-4fa5-9fdc-f4e9aa7726d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/res/audio/kill/1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/kill/1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/audio/kill/2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/kill/2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/audio/kill/3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/kill/3.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/audio/kill/4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/kill/4.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/audio/kill/5.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/audio/kill/5.wav" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2feOp7EpefjvNLStrnSN2czScFR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3729978-e99b-4fa5-9fdc-f4e9aa7726d8" name="Changes" comment="" />
+      <created>1714158256107</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714158256107</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

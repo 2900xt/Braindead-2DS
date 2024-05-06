@@ -5,8 +5,8 @@ import src.World.Entity.Bot;
 
 public class Pathfinder 
 {
-    protected static int[] xDirs = {0, 1, 0, -1};
-    protected static int[] yDirs = {1, 0, -1, 0};
+    protected static int[] xDirs = {0, 1, 0, -1, 1, 1, -1, -1};
+    protected static int[] yDirs = {1, 0, -1, 0, -1, 1, 1, -1};
 
     protected Bot bot;
 

@@ -2,6 +2,7 @@ package src.World.Entity;
 
 import src.Math.Vec2;
 import src.World.World;
+import src.World.Entity.Pathfinding.AStarPathfinder;
 import src.World.Entity.Pathfinding.BFSPathfinder;
 import src.World.Entity.Pathfinding.Pathfinder;
 import src.World.Guns.*;
@@ -30,7 +31,7 @@ public class Bot extends Playable {
             siteToPathfind = world.BSite;
         }
 
-        pf = new BFSPathfinder(this);
+        pf = new AStarPathfinder(this);
     }
 
     public void doCT()

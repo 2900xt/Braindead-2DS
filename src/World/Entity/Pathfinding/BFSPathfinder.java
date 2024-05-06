@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import src.Game.Game;
 import src.Math.Vec2;
 import src.World.Entity.Bot;
 
 public class BFSPathfinder extends Pathfinder
 {
-    private boolean[][] visited;
-    private Vec2[][] parents;
-    private ArrayList<Vec2> curPath;
-    private int pathIndex;
-    private int sz;
+    protected boolean[][] visited;
+    protected Vec2[][] parents;
+    protected ArrayList<Vec2> curPath;
+    protected int pathIndex;
+    protected int sz;
 
     private Vec2 prevPosFail, prevDestFail;
 
@@ -31,9 +30,12 @@ public class BFSPathfinder extends Pathfinder
 
         parents = new Vec2[sz][sz];
         visited = new boolean[sz][sz];
+
+        FWPathfinder test = new FWPathfinder(bot);
+        FWPathfinder.printPath(0, 14);
     }
 
-    private void bfs(int x, int y)
+    protected void bfs(int x, int y)
     {
         Queue<Vec2> q = new LinkedList<>();
         q.add(new Vec2(x, y));
@@ -71,7 +73,7 @@ public class BFSPathfinder extends Pathfinder
         
     }
 
-    private boolean createPath(Vec2 destination)
+    protected boolean createPath(Vec2 destination)
     {
         parents = new Vec2[sz][sz];
         visited = new boolean[sz][sz];
@@ -119,7 +121,7 @@ public class BFSPathfinder extends Pathfinder
             {
                 prevDestFail = destination;
                 prevPosFail = bot.getPos();
-                System.out.printf("DFS: NO PATH FOUND FROM \t{%.1f, %.1f} to \t{%.1f, %.1f}\n", 
+                System.out.printf("BFS: NO PATH FOUND FROM \t{%.1f, %.1f} to \t{%.1f, %.1f}\n", 
                     bot.getPos().getX(), 
                     bot.getPos().getY(),
                     destination.getX(),

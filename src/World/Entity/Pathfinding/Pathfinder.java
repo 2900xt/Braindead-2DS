@@ -9,9 +9,11 @@ public class Pathfinder
     protected static int[] yDirs = {1, 0, -1, 0, -1, 1, 1, -1};
 
     protected Bot bot;
+    public static long timeUsed;
 
     public Pathfinder(Bot bot)
     {
+        timeUsed = 0;
         this.bot = bot;
     }
 
@@ -56,6 +58,9 @@ public class Pathfinder
     
     public void pathFind(Vec2 destination)
     {
+        long cur = System.currentTimeMillis();
+        
         goTo(destination);
+        timeUsed += (System.currentTimeMillis() - cur);
     }
 }

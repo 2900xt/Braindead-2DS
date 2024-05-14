@@ -93,6 +93,7 @@ public class DFSPathfinder extends Pathfinder
 
     public void pathFind(Vec2 destination)
     {
+        long cur = System.currentTimeMillis();
         if(curPath.size() == 0 || !curPath.get(curPath.size() - 1).equals(destination))
         {
             if(prevDestFail.equals(destination, 1.0) && prevPosFail.equals(bot.getPos()))
@@ -136,5 +137,6 @@ public class DFSPathfinder extends Pathfinder
         if(pathIndex == curPath.size()) return;
 
         goTo(curPath.get(pathIndex));
+        timeUsed += System.currentTimeMillis() - cur;
     }
 }
